@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h1>Write Your Information</h1>
+
+<form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    <p>이름: <input type="text" name="name"></p>
+    <p>나이: <input type="text" name="age"></p>
+    <p>이메일: <input type="email" name="email"></p>
+    자기소개: <textarea name="introduce" cols="30" rows="10"></textarea>
+    <button type="submit">Join</button>
+</form>
+
+{% endblock %}
